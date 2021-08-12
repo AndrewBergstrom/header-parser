@@ -20,8 +20,10 @@ app.get("/", function (req, res) {
 });
 
 let resObj = {};
+app.enable('trust proxy')
 // your first API endpoint... 
 app.get("/api/whoami", function (req, res) {
+  resObj['ipaddress'] = req.ip;
   res.json(resObj);
 });
 
