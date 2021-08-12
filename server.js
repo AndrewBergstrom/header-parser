@@ -25,6 +25,7 @@ app.enable('trust proxy')
 app.get("/api/whoami", function (req, res) {
   resObj['ipaddress'] = req.ip;
   resObj['language'] = req.get('Accept-Language')
+  resObj['software'] = req.get('User-Agent')
   res.json(resObj);
 });
 
