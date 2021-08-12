@@ -24,6 +24,7 @@ app.enable('trust proxy')
 // your first API endpoint... 
 app.get("/api/whoami", function (req, res) {
   resObj['ipaddress'] = req.ip;
+  resObj['language'] = req.get('Accept-Language')
   res.json(resObj);
 });
 
